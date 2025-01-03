@@ -6,6 +6,7 @@ import Property from "./Components/Property/Property";
 import Seller from "./Components/Seller/Seller";
 import SellerProperty from "./Components/Seller/SellerProperty";
 import NoPage from "./NoPage";
+import Buyer from "./Components/Buyer/Buyer";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="property" element={<Property />} />
             <Route path="seller" element={<Seller />}></Route>
             <Route path="seller/:sellerId/property" element={<SellerProperty />}></Route>
+            <Route path="buyer" element={<Buyer/>}/>
             <Route path="*" element={<NoPage/>}/>
             </Route>
         </Routes>
