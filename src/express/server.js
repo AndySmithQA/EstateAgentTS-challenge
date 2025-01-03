@@ -3,6 +3,7 @@ import cors from 'cors';
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 const port = 8080;
 
 const seller = [{"firstName": "Stephanie ","surname": "Hill","address": "brecon Town, Brecon","postcode": "BR1 2JE","phone": "","id": "1"},{"firstName": "Jade","surname": "Song","address": "Sichuan, China","postcode": "1131321","phone": "","id": "2"},{"firstName": "Nicohola","surname": "Green","address": "Fairwater, Cardiff","postcode": "CF1 1AA","phone": "1234234","id": "3"},{"firstName": "Cookie","surname": "Cat","address": "Tesco Street","postcode": "A11 AA1","phone": "12345","id": "4"},{"firstName": "Sam","surname": "Ash","address": "Very We","postcode": "QA1 1QA","phone": "123344556","id": "5"}];
@@ -13,12 +14,24 @@ app.get('/seller', (req, res) => {
     res.json(seller);
 });
 
+app.post('/seller', (req, res) => {
+    const newSeller = req.body;
+    seller.push(newSeller);
+    res.status(201).json(newSeller);
+});
+
 app.get('/property', (req, res) => {
     res.json(property);
 });
 
 app.get('/buyer', (req, res) => {
     res.json(buyer);
+});
+
+app.post('/buyer', (req, res) => {
+    const newbuyer = req.body;
+    seller.push(newbuyer);
+    res.status(201).json(newbuyer);
 });
 
 app.listen(port, () => {
