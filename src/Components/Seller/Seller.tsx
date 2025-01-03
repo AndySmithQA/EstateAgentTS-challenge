@@ -47,7 +47,7 @@ const Seller: React.FC = () => {
         })
         .then((response) => {
             if (!response.ok) {
-                alert("An error has occurred.  Unable to create the TODO item");
+                alert("An error has occurred.  Unable to create the Seller");
                 setSaving(false);
                 throw response.status;
             } else return response.json();

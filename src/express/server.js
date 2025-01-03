@@ -20,6 +20,11 @@ app.post('/seller', (req, res) => {
     res.status(201).json(newSeller);
 });
 
+app.post('/seller', (req, res) => {
+    const newSeller = req.body;
+    seller.push(newSeller);
+    res.status(201).json(newSeller);
+});
 app.get('/property', (req, res) => {
     res.json(property);
 });
